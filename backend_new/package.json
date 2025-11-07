@@ -2,11 +2,11 @@
   "name": "theatre",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon backend_new/server.js",
-     "start": "nodemon backend_new/server.js",
-     "build":"npm install && npm install --prefix Cinebook && npm run build --prefix Cinebook"
+     "start": "node server.js",
+     "build":"npm install && npm install --prefix Cinebook && npm run build --prefix Cinebook",
+     "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",

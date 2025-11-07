@@ -10,14 +10,14 @@ import path from 'path';
 dotenv.config();
 import cors from 'cors';
 app.use(cors({
-  origin: "http://localhost:5173",  // your React app URL
+  origin: ["http://localhost:5173","http://localhost:3000"],  // your React app URL
   credentials: true
 }));
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, '/Cinebook/dist')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/Cinebook/dist/index.html'));
-});
+// const __dirname = path.resolve();
+// app.use(express.static(path.join(__dirname, '/Cinebook/dist')));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '/Cinebook/dist/index.html'));
+// });
 
 app.use(express.json());
 app.use('/api/users', routes);

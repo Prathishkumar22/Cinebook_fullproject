@@ -36,3 +36,43 @@ export const LoginUser= async (req, res) => {
     res.status(500).json({ msg: 'Server error', error: err.message });
   }
 }
+export const GetAllUsers = async (req, res) => {
+  try {
+    const users = await User.find().select('-password'); // exclude passwords
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(500).json({ msg: 'Server error', error: err.message });
+  }
+};
+
+// Get a single user by ID
+export const GetUserById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(id).select('-password'); // exclude password
+
+    if (!user) {
+      return res.status(404).json({ msg: 'User not found' });
+    }
+
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json({ msg: 'Server error', error: err.message });
+  }
+};
+
+// Optionally, get a user by email (if you prefer query-based lookup)
+export const GetUserByEmail = async (req, res) => {
+  try {
+    const { email } = req.query;
+    const user = await User.findOne({ email }).select('-password');
+
+    if (!user) {
+      return res.status(404).json({ msg: 'User not found' });
+    }
+
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json({ msg: 'Server error', error: err.message });
+  }
+};
