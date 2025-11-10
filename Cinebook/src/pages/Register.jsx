@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "../pages/Auth.module.css";
 
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const Register = () => {
 
   const handleRegister = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/users/register", {
+      const res = await fetch(`${VITE_API_BASE_URL}/users/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
