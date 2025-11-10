@@ -10,7 +10,7 @@ import path from 'path';
 dotenv.config();
 import cors from 'cors';
 app.use(cors({
-  origin: ["http://localhost:5173","http://localhost:3000","http://13.62.125.171/"],  // your React app URL
+  origin: ["http://localhost:5173","http://localhost:3000","http://13.62.125.171:3000"],  // your React app URL
   credentials: true
 }));
 // const __dirname = path.resolve();
