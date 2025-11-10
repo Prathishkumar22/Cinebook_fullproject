@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../images/CinebookLogo-removebg-preview.png'
+import logo from '../images/Cinebook-logo.png'
 import styles from '../pages/Home.module.css'
 import { useEffect, useState } from 'react'
 
