@@ -17,7 +17,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch(`${VITE_API_BASE_URL}/api/users/login`, {
+      const res = await fetch(`${VITE_API_BASE_URL}/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
