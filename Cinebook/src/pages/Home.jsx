@@ -15,13 +15,12 @@ function Home() {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
     alert("✅ You have been logged out from the site");
-    // ❌ no navigation, stays on Home
   };
 
   return (
     <>
       <div className={styles.logo}>
-        <a href="/"><img src='src/images/CinebookLogo-removebg-preview.png' alt="Cinebook Logo" /></a>
+        <a href="/"><img src={logo} alt="Cinebook Logo" /></a>
         <h1>Cinebook</h1>
       </div>
 
